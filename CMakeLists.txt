@@ -14,3 +14,5 @@ add_subdirectory(core)
 add_custom_target(copy-runtime-files ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/python ${CMAKE_INSTALL_PREFIX}/python
     DEPENDS ${LarLiteAnalysis})
+
+install(EXPORT larlite-targets DESTINATION lib/larlite)

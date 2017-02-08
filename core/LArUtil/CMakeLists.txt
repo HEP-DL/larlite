@@ -8,8 +8,8 @@ ROOT_GENERATE_DICTIONARY(G__LArUtil ${HEADERS} LINKDEF LinkDef.h)
 
 add_library(LarLiteLArUtil SHARED ${SOURCES} ) #G__LArUtil.cxx
 target_link_libraries(LarLiteLArUtil ${ROOT_LIBRARIES} LarLiteBase)
-install(TARGETS LarLiteLArUtil DESTINATION lib)
-install(FILES ${HEADERS} DESTINATION include)
+install(TARGETS LarLiteLArUtil DESTINATION lib EXPORT larlite-targets)
+install(FILES ${HEADERS} DESTINATION include )
 
 file(GLOB applications bin/*.cc)
 foreach(_app ${applications})
