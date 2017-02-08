@@ -122,7 +122,7 @@ if [ $LARLITE_OS = 'Darwin' ]; then
 fi
 export PATH=$LARLITE_BASEDIR/bin:$PATH
 if [ $ENABLE_LARLITE_ALIAS ]; then
-    alias maketop="make --directory=$LARLITE_BASEDIR"
+    alias maketop="make"
     alias cdtop="cd $LARLITE_BASEDIR"
     alias llgen_package="python $LARLITE_BASEDIR/bin/gen_package"
     alias llgen_repository="python $LARLITE_BASEDIR/bin/gen_repository"
