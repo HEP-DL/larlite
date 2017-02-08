@@ -6,15 +6,8 @@ me="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 `python $me/python/clean_env.py DYLD_LIBRARY_PATH`
 `python $me/python/clean_env.py PYTHONPATH`
 `python $me/python/clean_env.py PATH`
-if [[ -z $FORCE_LARLITE_BASEDIR ]]; then
-    # If LARLITE_BASEDIR not set, try to guess
-    # Find the location of this script:
-    me="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    # Find the directory one above.
-    export LARLITE_BASEDIR="$( cd "$( dirname "$me" )" && pwd )"
-else
-    export LARLITE_BASEDIR=$FORCE_LARLITE_BASEDIR
-fi
+
+export LARLITE_BASEDIR="$( cd "$( dirname "$me" )" && pwd )"
 unset me;
 
 if [[ -z $ENABLE_LARLITE_ALIAS ]]; then
