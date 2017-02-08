@@ -6,7 +6,7 @@ file(GLOB SOURCES . *.cxx )
 
 ROOT_GENERATE_DICTIONARY(G_LarLiteDataFormat ${HEADERS} LINKDEF LinkDef.h)
 
-add_library(LarLiteDataFormat SHARED ${SOURCES}  ) # DATAFORMAT_DICT.cxx
+add_library(LarLiteDataFormat SHARED ${SOURCES} G_LarLiteDataFormat.cxx s)
 target_link_libraries(LarLiteDataFormat ${ROOT_LIBRARIES})
 install(TARGETS LarLiteDataFormat DESTINATION lib)
 install(FILES ${HEADERS} DESTINATION include)
