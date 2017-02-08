@@ -10,6 +10,7 @@ add_library(LarLiteAnalysis SHARED ${SOURCES} )#
 target_link_libraries(LarLiteAnalysis ${ROOT_LIBRARIES})
 install(TARGETS LarLiteAnalysis DESTINATION lib EXPORT larliteConfig)
 install(FILES ${HEADERS} DESTINATION include )
+export(TARGETS LarLiteAnalysis FILE larliteConfig.cmake)
 
 file(GLOB applications bin/*.cc)
 foreach(_app ${applications})

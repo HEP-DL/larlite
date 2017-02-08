@@ -10,6 +10,8 @@ add_library(LarLiteDataFormat SHARED ${SOURCES} G_LarLiteDataFormat.cxx )
 target_link_libraries(LarLiteDataFormat ${ROOT_LIBRARIES})
 install(TARGETS LarLiteDataFormat DESTINATION lib EXPORT larliteConfig)
 install(FILES ${HEADERS} DESTINATION include )
+export(TARGETS LarLiteDataFormat FILE larliteConfig.cmake)
+
 
 #file(GLOB applications bin/*.cc)
 #foreach(_app ${applications})

@@ -19,5 +19,3 @@ add_custom_target(copy-runtime-files ALL
 
 install(EXPORT larliteConfig DESTINATION share/larlite/cmake)
 
-# This makes the project importable from the build directory
-export(TARGETS lib FILE larliteConfig.cmake)

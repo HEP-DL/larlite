@@ -10,6 +10,7 @@ add_library(LarLiteLArUtil SHARED ${SOURCES} ) #G__LArUtil.cxx
 target_link_libraries(LarLiteLArUtil ${ROOT_LIBRARIES} LarLiteBase)
 install(TARGETS LarLiteLArUtil DESTINATION lib EXPORT larliteConfig)
 install(FILES ${HEADERS} DESTINATION include )
+export(TARGETS LarLiteLArUtil FILE larliteConfig.cmake)
 
 file(GLOB applications bin/*.cc)
 foreach(_app ${applications})
