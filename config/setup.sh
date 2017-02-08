@@ -45,36 +45,17 @@ if [[ -z $USER_MODULE ]]; then
 fi
 
 # Check compiler availability for clang++ and g++
-LARLITE_CXX=clang++
-if [ `command -v $LARLITE_CXX` ]; then
-    export LARLITE_CXX="$LARLITE_CXX -std=c++11";
-else
-    LARLITE_CXX=g++
-    if [[ -z `command -v $LARLITE_CXX` ]]; then
+
+LARLITE_CXX=g++
+if [[ -z `command -v $LARLITE_CXX` ]]; then
 	echo
 	echo Looks like you do not have neither clang or g++!
 	echo You need one of those to compile LArLite... Abort config...
 	echo
 	return;
-    fi
-    export LARLITE_CXX;
-    if [ $LARLITE_OS = 'Darwin' ]; then
-	echo $LARLITE_OS
-	echo
-	echo "***************** COMPILER WARNING *******************"
-	echo "*                                                    *"
-	echo "* You are using g++ on Darwin to compile LArLite.    *"
-	echo "* Currently LArLite assumes you do not have C++11    *"
-	echo "* in this combination. Contact the author if this is *"
-	echo "* not the case. At this rate you have no ability to  *"
-	echo "* compile packages using C++11 in LArLite.           *"
-	echo "*                                                    *"
-	echo "* Help to install clang? See manual/contact author!  *"
-	echo "*                                                    *"
-	echo "******************************************************"
-	echo 
-    fi
 fi
+export LARLITE_CXX;
+
 if [[ -z $ROOTSYS ]]; then
     case `uname -n` in
 	(houston.nevis.columbia.edu)
