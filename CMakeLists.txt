@@ -15,4 +15,9 @@ add_custom_target(copy-runtime-files ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/python ${CMAKE_INSTALL_PREFIX}/python
     DEPENDS ${LarLiteAnalysis})
 
-install(EXPORT larlite-targets DESTINATION lib/larlite)
+
+
+install(EXPORT larliteConfig DESTINATION share/larlite/cmake)
+
+# This makes the project importable from the build directory
+export(TARGETS lib FILE larliteConfig.cmake)

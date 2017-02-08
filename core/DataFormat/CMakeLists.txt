@@ -8,7 +8,7 @@ ROOT_GENERATE_DICTIONARY(G_LarLiteDataFormat ${HEADERS} LINKDEF LinkDef.h)
 
 add_library(LarLiteDataFormat SHARED ${SOURCES} G_LarLiteDataFormat.cxx )
 target_link_libraries(LarLiteDataFormat ${ROOT_LIBRARIES})
-install(TARGETS LarLiteDataFormat DESTINATION lib EXPORT larlite-targets)
+install(TARGETS LarLiteDataFormat DESTINATION lib EXPORT larliteConfig)
 install(FILES ${HEADERS} DESTINATION include )
 
 #file(GLOB applications bin/*.cc)

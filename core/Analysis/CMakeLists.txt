@@ -8,7 +8,7 @@ ROOT_GENERATE_DICTIONARY(G__LarLiteAnalysis ${HEADERS} LINKDEF LinkDef.h)
 
 add_library(LarLiteAnalysis SHARED ${SOURCES} )#
 target_link_libraries(LarLiteAnalysis ${ROOT_LIBRARIES})
-install(TARGETS LarLiteAnalysis DESTINATION lib EXPORT larlite-targets)
+install(TARGETS LarLiteAnalysis DESTINATION lib EXPORT larliteConfig)
 install(FILES ${HEADERS} DESTINATION include )
 
 file(GLOB applications bin/*.cc)
